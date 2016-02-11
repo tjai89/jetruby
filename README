@@ -7,14 +7,7 @@ We will try to simplify the problem as much as possible. Please find User Storie
 assume that there is only one organization in the application, all users belong to it. 
 
 
-
-
-
-
-
-● As a user I can see a weekdays on the dashboard page 
-
-● As a user, when I click on the weekday(today or days in the past), I can see menu ­ list 
+● As a user, when I click on the weekday(today or days in the past???), I can see menu ­list 
 of items with prices. 
 
 ● As a user, when I choose items from menu, I can only choose one item from the first 
@@ -63,6 +56,14 @@ project ­ Rails 4+, devise, twitter bootstrap, haml, simple_form, carrierwave, 
 
 меню на каждый день 
 
-7 дней 
-
 3 категории (первое, второе, напитки)
+- блюдо 
+- цена
+
+
+7 дней (категории)
+
+пон вт ср четв пятн суб воскр
+
+
+

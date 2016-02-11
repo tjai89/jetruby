@@ -11,10 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160211130417) do
+ActiveRecord::Schema.define(version: 20160211190733) do
 
   create_table "menus", force: :cascade do |t|
-    t.date     "order_date"
+    t.string   "order_date"
     t.string   "title"
     t.text     "description"
     t.decimal  "price"

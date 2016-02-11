@@ -1,5 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe Menu, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Menu do
+
+  before(:each) { @menu = Menu.new(title: "Borsh") }
+
+  subject { @menu }
+
+  it { should respond_to(:title) }
+
+  it "#title returns a string" do
+    expect(@menu.title).to match "Borsh"
+  end
 end

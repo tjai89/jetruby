@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :menu do
-    order_date "2016-02-11"
-    title "MyString"
-    description "MyText"
+    order_date "Monday"
+    title "Borsh"
+    description "delicious"
     price "9.99"
   end
 end
