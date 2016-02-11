@@ -5,19 +5,12 @@ used already in production.
  
 We will try to simplify the problem as much as possible. Please find User Stories below. Let’s 
 assume that there is only one organization in the application, all users belong to it. 
- 
-● As a guest I should be able to sign up with name, email and password. 
-DONE!
 
-● As a guest I should be able to sign in with email and password. 
-DONE!
 
-● As a first registered user in the system, I become a Lunches Admin. 
-DONE!
 
- 
-● As a user I can edit my profile 
-DONE!
+
+
+
 
 ● As a user I can see a weekdays on the dashboard page 
 
@@ -28,9 +21,6 @@ of items with prices.
 course, one item from the main course and one drink. Total 3 items. 
 
 ● As a user I can press Submit button to process my order. 
- 
-● As a Lunches Admin, I can browse registered users. 
-DONE!
 
 
 ● As a Lunches Admin, I can browse days and see users’ orders there. 
@@ -63,3 +53,16 @@ Recommended technologies
 If you know your way, skip this step. ​
 Otherwise we are expecting from you to use these gems in 
 project ­ Rails 4+, devise, twitter bootstrap, haml, simple_form, carrierwave, rspec, capybara 
+
+
+
+
+
+
+
+
+меню на каждый день 
+
+7 дней 
+
+3 категории (первое, второе, напитки)
