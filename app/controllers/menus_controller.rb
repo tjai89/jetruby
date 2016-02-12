@@ -2,6 +2,28 @@ class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_action :admin?, except: [:index, :show]
 
+
+  def sunday
+  end
+
+  def monday
+  end
+
+  def tuesday
+  end
+
+  def wednesday
+  end
+
+  def thursday
+  end
+
+  def friday
+  end
+
+  def saturday
+  end
+
   # GET /menus
   # GET /menus.json
   def index
@@ -72,4 +94,5 @@ class MenusController < ApplicationController
     def menu_params
       params.require(:menu).permit(:order_date, :title, :description, :price)
     end
+
 end

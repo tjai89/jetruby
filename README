@@ -1,7 +1,4 @@
-Each company that uses the services of delivery meals, sooner or later, comes to the great and 
-original idea to develop their own service to order a lunch. Many start, but only few of them bring 
-it to the end. The objective of this task is to develop very small MVP, which could be taken and 
-used already in production. 
+
  
 We will try to simplify the problem as much as possible. Please find User Stories below. Let’s 
 assume that there is only one organization in the application, all users belong to it. 
@@ -17,9 +14,7 @@ course, one item from the main course and one drink. Total 3 items.
 
 
 ● As a Lunches Admin, I can browse days and see users’ orders there. 
-
-● As a Lunches Admin, I can add items in menu only for today by adding a name and 
-price. 
+ 
 
 ● As a Lunches Admin, on the date page I can see the list of orders and total launch cost 
 for today.  
