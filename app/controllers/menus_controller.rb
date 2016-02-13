@@ -1,8 +1,7 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
-  before_action :admin?, except: [:index, :show]
-
-
+  before_action :admin?, only: [:new, :edit, :create, :update, :destroy]
+  before_action :find_menu, only:[:sunday]
   def sunday
   end
 
@@ -86,6 +85,11 @@ class MenusController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+    def find_menu
+      @menus = Menu.all
+    end
+
     def set_menu
       @menu = Menu.find(params[:id])
     end
@@ -94,5 +98,4 @@ class MenusController < ApplicationController
     def menu_params
       params.require(:menu).permit(:order_date, :title, :description, :price)
     end
-
 end
