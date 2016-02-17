@@ -1,0 +1,36 @@
+
+<h3><%= link_to 'New Menu', new_menu_path if current_user.admin? %></h3> 
+  
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Menu on Wednesday</h1>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Order date</th>
+        <th>Dish</th>
+        <th>Description</th>
+        <th>Price (usd)</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>  
+      <% @menus.tuesday.each do |menu| %>
+        <td><%= menu.order_date %></td>
+        <td><%= menu.title %></td>
+        <td><%= menu.description %></td>
+        <td><%= menu.price %> </td>
+        <% if current_user.admin? %>
+          <td><%= link_to 'Show', menu %></td>
+          <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+          <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div> 
+<br>

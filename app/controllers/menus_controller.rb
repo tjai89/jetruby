@@ -1,7 +1,7 @@
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_action :admin?, only: [:new, :edit, :create, :update, :destroy]
-  before_action :find_menu, only:[:sunday]
+  before_action :find_menu, only:[:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday]
   def sunday
   end
 

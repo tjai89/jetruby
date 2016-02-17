@@ -1,5 +1,6 @@
 class Menu < ActiveRecord::Base
   validates :order_date, :inclusion => { :in => [Time.now.strftime("%A")] }  
+  validates :title, :description, :price, presence: true 
 
     scope :sunday,    -> {where(:order_date =>"Sunday")} 
     scope :monday,    -> {where(:order_date =>"Monday")}
