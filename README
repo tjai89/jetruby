@@ -4,9 +4,6 @@ We will try to simplify the problem as much as possible. Please find User Storie
 assume that there is only one organization in the application, all users belong to it. 
 
 
-● As a user, when I click on the weekday(today or days in the past???), I can see menu ­list 
-of items with prices. 
-
 ● As a user, when I choose items from menu, I can only choose one item from the first 
 course, one item from the main course and one drink. Total 3 items. 
 
