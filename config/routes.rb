@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
+  root to: 'visitors#index'
+
 
   resources :menus do
     collection do 
@@ -13,7 +17,7 @@ Rails.application.routes.draw do
   end
 
 
-  root to: 'visitors#index'
+
 
   devise_for :users
   
