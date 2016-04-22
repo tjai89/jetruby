@@ -10,16 +10,17 @@
     <%= render 'thead_form' %>
     <tbody>  
       <% @menus.thursday.each do |menu| %>
-        <td><%= menu.order_date %></td>
-        <td><%= menu.title %></td>
-        <td><%= menu.description %></td>
-        <td><%= menu.price %> </td>
-        <td><%= button_to 'Add to Cart', line_items_path(menu_id: menu) %></td>
-        <% if current_user.admin? %>
-          <td><%= link_to 'Show', menu %></td>
-          <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
-          <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <tr>
+          <td><%= menu.order_date %></td>
+          <td><%= menu.title %></td>
+          <td><%= menu.description %></td>
+          <td><%= menu.price %> </td>
+          <td><%= button_to 'Add to Cart', line_items_path(menu_id: menu) %></td>
+          <% if current_user.admin? %>
+            <td><%= link_to 'Show', menu %></td>
+            <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+            <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>
