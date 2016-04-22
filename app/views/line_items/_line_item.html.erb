@@ -1,0 +1,30 @@
+<% @cart.line_items.each do |item| %>
+    <tr>
+        <th>Dish</th>
+        <th>Quantity</th>
+        <th class="text-center">Price</th>
+        <th class="text-center">Total</th>
+        <th> </th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td class="col-sm-8 col-md-6">
+        <div class="media">
+            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+            <div class="media-body">
+                <h4 class="media-heading"><%= item.menu.title %></h4>
+                <h5 class="media-heading"> category: <%= item.menu.dish_category %></h5>
+            </div>
+        </div></td>
+        <td class="col-sm-1 col-md-1" style="text-align: center">
+        <input type="email" class="form-control" id="exampleInputEmail1" value=<%= item.quantity %> &times;>
+        </td>
+        <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency(item.menu.price) %></strong></td>
+        <td class="col-sm-1 col-md-1 text-center"><strong><%= number_to_currency(item.total_price) %></strong></td>
+        <td class="col-sm-1 col-md-1">
+        <button type="button" class="btn btn-danger">
+            <span class="glyphicon glyphicon-remove"></span> Remove
+        </button></td>
+    </tr>
+<% end %>
