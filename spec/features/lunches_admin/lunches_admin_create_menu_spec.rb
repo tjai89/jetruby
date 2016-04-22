@@ -11,16 +11,17 @@ feature 'Lunches Admin create menu', :devise do
     admin = FactoryGirl.create(:lunches_admin)
     login_as(admin)
     visit new_menu_path
-    fill_in "Order date",   :with => Time.now.strftime("%A")
-    fill_in "Title",        :with => "Borsh"
-    fill_in "Description",  :with => "Mmm, yamy"    
-    fill_in "Price",        :with => 99.99    
-    click_button 'Create Menu'
+    fill_in "Order date",    :with => Time.now.strftime("%A")
+    fill_in "Title",         :with => "Borsh"
+    fill_in "Description",   :with => "Mmm, yamy"    
+    fill_in "Price",         :with => 99.99 
+    fill_in 'Dish category', :with => 'First course'
+    choose('First course')
     expect(page).to have_content "Menu was successfully created."
   end
 
 
-  scenario "lunches admin can't create new menu not for today" do
+  scenario "lunches admin can't create new menu for another day" do
     admin = FactoryGirl.create(:lunches_admin)
     login_as(admin)
     visit new_menu_path

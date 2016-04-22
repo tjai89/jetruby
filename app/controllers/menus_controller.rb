@@ -2,6 +2,10 @@ class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
   before_action :admin?, only: [:new, :edit, :create, :update, :destroy]
   before_action :find_menu, only:[:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday]
+
+  before_action :authenticate_user!
+
+  
   def sunday
   end
 
@@ -96,6 +100,6 @@ class MenusController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def menu_params
-      params.require(:menu).permit(:order_date, :title, :description, :price)
+      params.require(:menu).permit(:order_date, :title, :description, :price, :dish_category)
     end
 end

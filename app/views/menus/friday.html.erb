@@ -1,10 +1,6 @@
-
-<h3><%= link_to 'New Menu', new_menu_path if current_user.admin? %></h3> 
-  
-
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Menu on Wednesday</h1>
+<h1>Listing Menu on Friday</h1>
 <div class="table-responsive">
   <table class="table">
     <%= render 'thead_form' %>
@@ -13,13 +9,15 @@
         <tr>
           <td><%= menu.order_date %></td>
           <td><%= menu.title %></td>
+          <td><%= menu.dish_category %></td>   
           <td><%= menu.description %></td>
-          <td><%= menu.price %> </td>
+          <td><%= menu.price %> </td>       
           <td><%= button_to 'Add to Cart', line_items_path(menu_id: menu) %></td>
           <% if current_user.admin? %>
             <td><%= link_to 'Show', menu %></td>
             <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
             <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <h3><%= link_to 'New Menu', new_menu_path %></h3> 
           <% end %>
         </tr>
       <% end %>

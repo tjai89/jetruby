@@ -1,6 +1,11 @@
 require "rails_helper"
 
 RSpec.describe MenusController, :type => :controller do
+
+  before(:each) do
+    user = FactoryGirl.create(:user)
+    sign_in(user)
+  end
   
   describe "GET #menus/sunday" do
     it "returns a 200 OK status" do
