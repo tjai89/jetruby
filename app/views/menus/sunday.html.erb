@@ -7,22 +7,14 @@
 <h1>Listing Menu on Wednesday</h1>
 <div class="table-responsive">
   <table class="table">
-    <thead>
-      <tr>
-        <th>Order date</th>
-        <th>Dish</th>
-        <th>Description</th>
-        <th>Price (usd)</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
+    <%= render 'thead_form' %>
     <tbody>  
       <% @menus.sunday.each do |menu| %>
         <td><%= menu.order_date %></td>
         <td><%= menu.title %></td>
         <td><%= menu.description %></td>
         <td><%= menu.price %> </td>
+        <td><%= button_to 'Add to Cart', line_items_path(menu_id: menu) %></td>
         <% if current_user.admin? %>
           <td><%= link_to 'Show', menu %></td>
           <td><%= link_to 'Edit', edit_menu_path(menu) %></td>

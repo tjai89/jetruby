@@ -18,11 +18,10 @@ for today.
  
 Let’s assume that instead of calling to the Launches Delivery Company, they have a smart ERP 
 which can request the order for today through our API at a specific time.  
- ●
-●
-As a system, I should be able to provide list of the orders for today with details for each 
-person through RESTful JSON API endpoint. 
-As a system, I should have a secure API. 
+
+● As a system, I should be able to provide list of the orders for today with details for each 
+	person through RESTful JSON API endpoint. 
+● As a system, I should have a secure API. 
 General Notes
 ● Keep your code clean.  
 ● Thin controllers, fat models. Don’t forget about validations 
@@ -34,10 +33,7 @@ RSpec+Capybara)
 heroku in the end. 
 ○ Connect Travis­CI to your public repository 
  
-Recommended technologies
-If you know your way, skip this step. ​
-Otherwise we are expecting from you to use these gems in 
-project ­ Rails 4+, devise, twitter bootstrap, haml, simple_form, carrierwave, rspec, capybara 
+
 
 
 

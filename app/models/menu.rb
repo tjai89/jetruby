@@ -5,7 +5,7 @@ class Menu < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
 
-  validates :order_date, :inclusion => { :in => [Time.now.strftime("%A")] }  
+  validates :order_date, :inclusion => { :in => [Time.now.strftime("%A")] } # can't create menu not for today
   validates :title, :description, :price, presence: true 
 
     scope :sunday,    -> {where(:order_date =>"Sunday")} 
