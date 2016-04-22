@@ -24,7 +24,6 @@ class Menu < ActiveRecord::Base
   scope :friday,    -> {where(:order_date =>"Friday")}
   scope :saturday,  -> {where(:order_date =>"Saturday")} 
 
-
   private 
   # ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item

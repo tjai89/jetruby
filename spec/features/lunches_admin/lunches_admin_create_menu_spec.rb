@@ -15,8 +15,8 @@ feature 'Lunches Admin create menu', :devise do
     fill_in "Title",         :with => "Borsh"
     fill_in "Description",   :with => "Mmm, yamy"    
     fill_in "Price",         :with => 99.99 
-    fill_in 'Dish category', :with => 'First course'
     choose('First course')
+    click_button 'Create Menu'
     expect(page).to have_content "Menu was successfully created."
   end
 
