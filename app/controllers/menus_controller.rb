@@ -4,7 +4,7 @@ class MenusController < ApplicationController
   before_action :find_menu, only:[:sunday, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday]
 
   before_action :authenticate_user!
-
+  helper_method :sort_column, :sort_direction 
   
   def sunday
   end
@@ -89,9 +89,9 @@ class MenusController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-
+ 
     def find_menu
-      @menus = Menu.all
+      @menus = Menu.order(params[:sort])
     end
 
     def set_menu
