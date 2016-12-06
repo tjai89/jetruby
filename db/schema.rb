@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20160422175424) do
   add_index "line_items", ["menu_id"], name: "index_line_items_on_menu_id"
 
   create_table "menus", force: :cascade do |t|
-    t.string   "order_date",    default: "2016-04-23"
+    t.string   "order_date",    default: "2016-12-06"
     t.string   "title"
     t.text     "description"
     t.decimal  "price"
