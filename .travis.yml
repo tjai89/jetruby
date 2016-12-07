@@ -3,42 +3,10 @@ rvm:
 - 2.3.0
 bundler_args: --jobs=2
 
-before_install:
-    # geckodriver
-    - |
-        export PATH=$PWD/geckodriver:$PATH && \
-        if ! type geckodriver > /dev/null 2>&1; then \
-            rm -rf geckodriver && \
-            mkdir geckodriver && \
-            wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz -O geckodriver/geckodriver.tar.gz && \
-            tar -xvf geckodriver/geckodriver.tar.gz -C geckodriver && \
-            mv geckodriver/geckodriver geckodriver/real-geckodriver && \
-            rm geckodriver/geckodriver.tar.gz && \
-            printf '#!/usr/bin/env bash
-            args=("$@")
-            # remove --binary or -b option
-            for i in "${!args[@]}"; do
-                if [[ "${args[$i]}" =~ ^(--binary|-b)(=.*)?$ ]]; then
-                    unset args[$i]
-                    if [[ ! "${args[$(($i + 1))]}" =~ ^- ]]; then
-                        unset args[$(($i + 1))]
-                    fi
-                fi
-            done
-            args+=("--binary")
-            args+=("$(which firefox)")
-            real-geckodriver "${args[@]}"
-            ' > geckodriver/geckodriver && \
-            chmod +x geckodriver/geckodriver; \
-        fi; \
-        geckodriver --version
-- 'npm install -g bower'
-
 script:
   - bundle exec rake db:setup
   - bundle exec rake spec
-  - git clone --depth=50 https://github.com/mozilla/geckodriver.git mozilla/geckodriver
-  
+
 cache: bundler
 
 services:
@@ -46,5 +14,5 @@ services:
 
 addons:
   postgresql: "9.4"
-  firefox: "50.0"
+  firefox: "46"
 
