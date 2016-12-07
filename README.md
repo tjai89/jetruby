@@ -40,6 +40,7 @@ which can request the order for today through our API at a specific time.
 	person through RESTful JSON API endpoint. 
 	● As a system, I should have a secure API. 
 General Notes
+
 	● Keep your code clean.  
 	● Thin controllers, fat models. Don’t forget about validations 
 	● Prefer quality to the speed of delivering this task 
