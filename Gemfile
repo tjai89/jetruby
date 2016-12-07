@@ -32,7 +32,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
-  # gem 'sqlite3'
+  gem 'sqlite3'
   gem 'byebug'
 end
 group :production do
