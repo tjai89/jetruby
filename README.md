@@ -47,9 +47,9 @@ General Notes
 	● The code should be covered with unit, functional and integration tests. (Please use 
 	RSpec+Capybara) 
 	● Front­end can be pretty very simple. 
-○ The source code of application should be uploaded on github.com and deployed to 
-heroku in the end. 
-○ Connect Travis­CI to your public repository 
+	○ The source code of application should be uploaded on github.com and deployed to 
+	heroku in the end. 
+	○ Connect Travis­CI to your public repository 
  
 Recommended technologies
 If you know your way, skip this step. ​
