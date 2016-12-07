@@ -2,7 +2,6 @@ class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
   validates :line_items, length: {maximum: 1}
 
-
 	def add_menu(menu_id)
 		current_item = line_items.find_by(menu_id: menu_id)
 		if current_item

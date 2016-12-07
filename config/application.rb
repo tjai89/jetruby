@@ -19,6 +19,8 @@ module Jetruby
         request_specs: false
       g.fixture_replacement :factory_girl, dir: "spec/factories"
     end
+    # add custom validators path
+    config.autoload_paths += %W["#{config.root}/app/validators/"]
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
