@@ -5,5 +5,4 @@ class LineItem < ActiveRecord::Base
   def total_price
     menu.price * quantity
   end
-
 end

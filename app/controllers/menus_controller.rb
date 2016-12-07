@@ -6,6 +6,7 @@ class MenusController < ApplicationController
   before_action :authenticate_user!
   helper_method :sort_column, :sort_direction 
   
+  # todo add jquery effect for current day in menu
   def sunday
   end
 

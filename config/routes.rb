@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :line_items
   resources :carts
   root to: 'visitors#index'
+  devise_for :users
+  resources :users
 
 
   resources :menus do
@@ -15,11 +17,4 @@ Rails.application.routes.draw do
       get 'saturday'
     end
   end
-
-
-
-
-  devise_for :users
-  
-  resources :users
 end
