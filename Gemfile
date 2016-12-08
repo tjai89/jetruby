@@ -11,6 +11,7 @@ gem 'devise'
 gem 'high_voltage'
 gem 'puma'
 gem 'simple_form'
+gem "paperclip", "~> 5.0.0"
 
 group :development do
   gem 'web-console', '~> 2.0'

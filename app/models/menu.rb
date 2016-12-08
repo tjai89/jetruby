@@ -2,7 +2,12 @@ class Menu < ActiveRecord::Base
   has_many :line_items
   before_destroy :ensure_not_referenced_by_any_line_item
 
-  validates :order_date, :inclusion => { in: [Time.now.strftime("%A")] } # can't create menu not for today
+  # set up for paperclip
+  has_attached_file :image, styles: { large: "600x600>", medium: "300x300>", thumb: "100x100#" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  # can't create menu not for today
+  validates :order_date, :inclusion => { in: [Time.now.strftime("%A")] } 
   validates :title, :description, :price, :dish_category, presence: true 
 
   # Sets dishes category
