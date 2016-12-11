@@ -2,6 +2,7 @@ class LineItem < ActiveRecord::Base
   belongs_to :menu
   belongs_to :cart
 
+  # validates :category, uniqueness: {scope: [:menu, :cart_id]}
   validate :uniq_dish_category 
 
   def total_price
@@ -16,7 +17,7 @@ class LineItem < ActiveRecord::Base
       CATEGORIES.delete(self.menu.dish_category)
       true 
     else CATEGORIES.delete(self.menu.dish_category) == nil || CATEGORIES == []
-      raise 'Order must contain one dish for each category!'
+      errors.add(:base, 'You can chose only one item in category.')
     end
   end
 end

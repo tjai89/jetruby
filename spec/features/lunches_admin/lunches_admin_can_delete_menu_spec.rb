@@ -16,7 +16,6 @@ feature 'Lunches Admin delete menu', :devise, :js do
     page.driver.browser.switch_to.alert.accept
     expect(page).to have_content 'Menu was successfully destroyed.'
   end
-
 end
 
 

@@ -56,7 +56,7 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    @cart.destroy if @cart.id == session[:cart_id]
+    @cart.destroy if @cart.id == session[:cart_id] || current_user.admin
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to root_url, notice: 'Your cart is currently empty' }

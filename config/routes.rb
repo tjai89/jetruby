@@ -17,4 +17,6 @@ Rails.application.routes.draw do
       get 'saturday'
     end
   end
+  # redirects to root if route is wrong
+  match '*a' => redirect { |p, req| req.flash[:error] = "This is wrong route: /#{p[:a]}"; '/' }, via: :get
 end

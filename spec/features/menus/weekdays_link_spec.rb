@@ -34,8 +34,6 @@ feature 'User can see dishes in days menu', :devise, :js do
     click_link "Sunday"
     expect(page).to have_content dish.title
   end
-
-
 end
 
 

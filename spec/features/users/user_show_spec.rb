@@ -39,7 +39,5 @@ feature 'User profile page', :devise do
     Capybara.current_session.driver.header 'Referer', root_path
     visit users_path
     expect(page).to have_content 'Access denied.'
-  end
-
-  
+  end 
 end
